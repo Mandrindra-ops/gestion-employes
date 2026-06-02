@@ -1,10 +1,22 @@
-import { List, Datagrid, TextField, ReferenceField, NumberField, EditButton, DeleteButton, TextInput, BooleanInput, DataTable, EmailField, BooleanField, FunctionField } from 'react-admin';
+import { List, Datagrid, TextField, ReferenceField, NumberField, EditButton, DeleteButton, TextInput, BooleanInput, DataTable, EmailField, BooleanField, FunctionField, SearchInput, SelectInput } from 'react-admin';
 
 export const InternList = () => {
-  const internFilters = [
-    <TextInput source="department" label="Département" alwaysOn />,
-    <BooleanInput source="isRemunerate" label="Rémunéré" />,
+  const departementChoices = [
+    { id: "Informatique", name: "Informatique" },
+    { id: "Marketing", name: "Marketing" },
+    { id: "RH", name: "RH" },
+    { id: "Finance", name: "Finance" },
   ];
+  
+  const internFilters = [
+    <SearchInput source="q" alwaysOn />,
+    <SelectInput
+      source="departement"
+      label="Département"
+      choices={departementChoices}
+      emptyText="Tous les départements"
+    />,
+  ];  
 
   return (
     <List filters={internFilters}>
