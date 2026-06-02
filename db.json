@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstname": "Alice",
+      "lastname": "Martin",
+      "email": "alice@company.com",
+      "departement": "Informatique",
+      "salaire": 2800,
+      "actif": true
+    },
+    {
+      "id": 2,
+      "firstname": "Bob",
+      "lastname": "Dupont",
+      "email": "bob@company.com",
+      "departement": "Marketing",
+      "salaire": 2699,
+      "actif": true
+    },
+    {
+      "id": 3,
+      "firstname": "Clara",
+      "lastname": "Nguyen",
+      "email": "clara@company.com",
+      "departement": "RH",
+      "salaire": 2600,
+      "actif": false
+    },
+    {
+      "id": 4,
+      "firstname": "Mandrindra",
+      "lastname": "Rafanomezantsoa",
+      "email": "mandrindra.rafanomezantsoa@gmail.com",
+      "departement": "communication",
+      "salaire": 1500,
+      "actif": true
+    },
+    {
+      "id": 5,
+      "firstname": "Messi",
+      "lastname": "Lionnel",
+      "email": "Messi123@gmail.com",
+      "departement": "Marketing",
+      "salaire": 3000,
+      "actif": true
+    }
+  ]
+}
