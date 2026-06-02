@@ -5,6 +5,7 @@ import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeEdit } from "./employees/EmployeeEdit";
 import { EmployeeShow } from "./employees/EmployeeShow";
 import { EmployeeCreate } from "./employees/EmployeeCreate";
+import { InternList } from "./interns/InternList";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
@@ -14,6 +15,11 @@ export const App = () => (
       edit={EmployeeEdit}
       show={EmployeeShow}
       create={EmployeeCreate}
+    />
+     <Resource
+      name="interns"
+      list={InternList}
+      
     />
   </Admin>
 );
