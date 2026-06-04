@@ -7,7 +7,10 @@ export const InternList = () => {
     { id: "RH", name: "RH" },
     { id: "Finance", name: "Finance" },
   ];
-  
+  const remunereChoices = [
+  { id: true, name: "Rémunéré" },
+  { id: false, name: "Non rémunéré" },
+];
   const internFilters = [
     <SearchInput source="q" alwaysOn />,
     <SelectInput
@@ -15,6 +18,12 @@ export const InternList = () => {
       label="Département"
       choices={departementChoices}
       emptyText="Tous les départements"
+    />,
+    <SelectInput
+      source="remunerer"
+      label="Rémunéré"
+      choices={remunereChoices}
+      emptyText="Tous les statuts"
     />,
   ];  
 
