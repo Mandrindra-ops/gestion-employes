@@ -1,4 +1,11 @@
-import { List, Datagrid, TextField, ReferenceField, NumberField, EditButton, DeleteButton, TextInput, BooleanInput, DataTable, EmailField, BooleanField, FunctionField, SearchInput, SelectInput } from 'react-admin';
+import { List, Datagrid, TextField, ReferenceField, NumberField, EditButton, DeleteButton, TextInput, BooleanInput, DataTable, EmailField, BooleanField, FunctionField, SearchInput, SelectInput, TopToolbar } from 'react-admin';
+import { QuickInternCreateButton } from './QuickInternCreateButton';
+
+const InternListActions = () => (
+  <TopToolbar>
+    <QuickInternCreateButton />
+  </TopToolbar>
+);
 
 export const InternList = () => {
   const departementChoices = [
@@ -28,7 +35,7 @@ export const InternList = () => {
   ];  
 
   return (
-    <List filters={internFilters}>
+    <List filters={internFilters} actions={<InternListActions />}>
        <DataTable rowClick="show">
             <DataTable.Col source="id" />
             <DataTable.Col source="firstname" label="Prénom" />
