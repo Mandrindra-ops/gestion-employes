@@ -1,6 +1,5 @@
 import {
   Show,
-  SimpleShowLayout,
   TabbedShowLayout,
   Tab,
   TextField,
@@ -10,8 +9,11 @@ import {
   useRecordContext,
   TopToolbar,
   EditButton,
-  ListButton
+  ListButton,
 } from "react-admin";
+import { Box, Typography } from "@mui/material";
+import { InternsByManager } from "./InternsByManager";
+import { DepartmentStats } from "./DepartmentStats";
 
 const EmployeeTitle = () => {
   const record = useRecordContext();
@@ -43,6 +45,17 @@ export const EmployeeShow = () => (
           options={{ style: "currency", currency: "EUR" }}
         />
         <BooleanField source="actif" label="Actif" />
+      </Tab>
+      <Tab label="Statistiques">
+        <Box sx={{ display: "grid", gap: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Statistiques du département
+          </Typography>
+          <DepartmentStats />
+        </Box>
+      </Tab>
+      <Tab label="Stagiaires encadrés">
+        <InternsByManager />
       </Tab>
     </TabbedShowLayout>
   </Show>
