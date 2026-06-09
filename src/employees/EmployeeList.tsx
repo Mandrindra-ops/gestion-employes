@@ -10,6 +10,7 @@ import {
   DeleteButton,
   ShowButton,
 } from "react-admin";
+import { QuickStatusToggle } from "./QuickStatusToggle";
 
 const departementChoices = [
   { id: "Informatique", name: "Informatique" },
@@ -53,6 +54,9 @@ export const EmployeeList = () => (
       </DataTable.Col>
       <DataTable.Col source="actif" label="Actif">
         <BooleanField source="actif" />
+      </DataTable.Col>
+      <DataTable.Col label="Statut rapide">
+        <QuickStatusToggle />
       </DataTable.Col>
       <DataTable.Col label="Actions">
         <ShowButton />
