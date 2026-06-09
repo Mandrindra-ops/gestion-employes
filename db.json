@@ -48,17 +48,6 @@
   ],
   "interns": [
     {
-       "id": 1,
-      "firstname": "Neymar",
-      "lastname": "Junior",
-      "email": "neymarjunior@gmail.com",
-      "departement": "Informatique",
-      "salaire": 8000,
-      "actif": true,
-      "remunerer": true,
-      "managerId": 1
-    },
-    {
       "id": 2,
       "firstname": "Lamine",
       "lastname": "Yamal",
@@ -69,36 +58,36 @@
       "managerId": 2
     },
     {
-        "id": 3,
-        "firstname": "Kylian",
-        "lastname": "Mbappe",
-        "email": "kylianmbappe@gmail.com",
-        "departement": "Informatique",
-        "salaire": 1000,
-        "actif": true,
-        "remunerer": true,
-        "managerId": 1
+      "id": 3,
+      "firstname": "Kylian",
+      "lastname": "Mbappe",
+      "email": "kylianmbappe@gmail.com",
+      "departement": "Informatique",
+      "salaire": 1000,
+      "actif": true,
+      "remunerer": true,
+      "managerId": 1
     },
     {
-        "id": 4,
-        "firstname": "Zinedine",
-        "lastname": "Zidane",
-        "email": "mandrindra.rafanomezantsoa@gmail.com",
-        "departement": "communication",
-        "salaire": 1500,
-        "actif": true,
-        "remunerer": true,
-        "managerId": 4
+      "id": 4,
+      "firstname": "Zinedine",
+      "lastname": "Zidane",
+      "email": "mandrindra.rafanomezantsoa@gmail.com",
+      "departement": "communication",
+      "salaire": 1500,
+      "actif": true,
+      "remunerer": true,
+      "managerId": 4
     },
     {
-        "id": 5,
-        "firstname": "Sadio",
-        "lastname": "Mane",
-        "email": "Messi123@gmail.com", 
-        "departement": "Marketing",
-        "actif":true,
-        "remunerer": false,
-        "managerId": 2
+      "id": 5,
+      "firstname": "Sadio",
+      "lastname": "Mane",
+      "email": "Messi123@gmail.com",
+      "departement": "Marketing",
+      "actif": true,
+      "remunerer": false,
+      "managerId": 2
     }
   ]
 }
