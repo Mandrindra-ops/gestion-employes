@@ -88,6 +88,16 @@
       "actif": true,
       "remunerer": false,
       "managerId": 2
+    },
+    {
+      "firstname": "Yvette",
+      "lastname": "Herilala",
+      "email": "yvette.herilala@gmail.com",
+      "departement": "RH",
+      "managerId": 5,
+      "actif": true,
+      "remunerer": false,
+      "id": 6
     }
   ]
 }
