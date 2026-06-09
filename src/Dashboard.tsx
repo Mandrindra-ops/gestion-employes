@@ -1,23 +1,64 @@
 import { useGetList } from "react-admin";
 import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
+import {
+  People as PeopleIcon,
+  CheckCircle as CheckCircleIcon,
+  School as SchoolIcon,
+  AttachMoney as AttachMoneyIcon,
+} from "@mui/icons-material";
 
 interface StatCardProps {
   title: string;
   value: number;
   isPending: boolean;
   error?: Error;
+  icon: React.ReactNode;
+  color: string;
 }
 
-const StatCard = ({ title, value, isPending, error }: StatCardProps) => (
-  <Card>
+const StatCard = ({
+  title,
+  value,
+  isPending,
+  error,
+  icon,
+  color,
+}: StatCardProps) => (
+  <Card
+    sx={{
+      background: `linear-gradient(135deg, ${color}20 0%, ${color}10 100%)`,
+      borderLeft: `4px solid ${color}`,
+      height: "100%",
+    }}
+  >
     <CardContent>
-      <Typography color="textSecondary" gutterBottom>
+      <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+        <Box
+          sx={{
+            color: color,
+            fontSize: "2.5rem",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {icon}
+        </Box>
+      </Box>
+      <Typography color="textSecondary" gutterBottom sx={{ fontWeight: 600 }}>
         {title}
       </Typography>
       {isPending && <Typography>Chargement...</Typography>}
       {error && <Typography color="error">Erreur</Typography>}
       {!isPending && !error && (
-        <Typography variant="h4" component="div">
+        <Typography
+          variant="h4"
+          component="div"
+          sx={{
+            color: color,
+            fontWeight: 700,
+            fontSize: "2.5rem",
+          }}
+        >
           {value}
         </Typography>
       )}
@@ -69,17 +110,31 @@ export const Dashboard = () => {
   });
 
   return (
-    <Box sx={{ p: 2 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Tableau de bord
+    <Box sx={{ p: 3 }}>
+      <Typography
+        variant="h4"
+        component="h1"
+        gutterBottom
+        sx={{
+          mb: 4,
+          fontWeight: 700,
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+        }}
+      >
+        📊 Tableau de bord
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={3}>
           <StatCard
             title="Total employés"
             value={totalEmployees ?? 0}
             isPending={loadingTotalEmployees}
             error={errorTotalEmployees}
+            icon={<PeopleIcon sx={{ fontSize: "2.5rem" }} />}
+            color="#1976d2"
           />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
@@ -88,6 +143,8 @@ export const Dashboard = () => {
             value={activeEmployees ?? 0}
             isPending={loadingActiveEmployees}
             error={errorActiveEmployees}
+            icon={<CheckCircleIcon sx={{ fontSize: "2.5rem" }} />}
+            color="#4caf50"
           />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
@@ -96,6 +153,8 @@ export const Dashboard = () => {
             value={totalInterns ?? 0}
             isPending={loadingTotalInterns}
             error={errorTotalInterns}
+            icon={<SchoolIcon sx={{ fontSize: "2.5rem" }} />}
+            color="#ff9800"
           />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
@@ -104,6 +163,8 @@ export const Dashboard = () => {
             value={paidInterns ?? 0}
             isPending={loadingPaidInterns}
             error={errorPaidInterns}
+            icon={<AttachMoneyIcon sx={{ fontSize: "2.5rem" }} />}
+            color="#dc004e"
           />
         </Grid>
       </Grid>

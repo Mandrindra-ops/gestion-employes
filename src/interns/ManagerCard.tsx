@@ -1,5 +1,14 @@
 import { useRecordContext, useGetOne } from "react-admin";
-import { Card, CardContent, Typography, Link } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Link,
+  Box,
+  Chip,
+  Avatar,
+} from "@mui/material";
+import { Person as PersonIcon, Email as EmailIcon, LocationCity as LocationCityIcon, CheckCircle as CheckCircleIcon, Cancel as CancelIcon } from "@mui/icons-material";
 
 export const ManagerCard = () => {
   const intern = useRecordContext();
@@ -34,19 +43,49 @@ export const ManagerCard = () => {
   }
 
   return (
-    <Card>
+    <Card
+      sx={{
+        background: "linear-gradient(135deg, #667eea20 0%, #764ba220 100%)",
+        borderLeft: "4px solid #667eea",
+      }}
+    >
       <CardContent>
-        <Typography variant="h6" component="div" gutterBottom>
-          {manager.firstname} {manager.lastname}
-        </Typography>
-        <Typography>Département : {manager.departement}</Typography>
-        <Typography>
-          Email :{' '}
-          <Link href={`mailto:${manager.email}`} underline="hover">
+        <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+          <Avatar
+            sx={{
+              bgcolor: "#667eea",
+              mr: 2,
+              width: 48,
+              height: 48,
+            }}
+          >
+            <PersonIcon />
+          </Avatar>
+          <Box flex={1}>
+            <Typography variant="h6" component="div" sx={{ fontWeight: 700 }}>
+              {manager.firstname} {manager.lastname}
+            </Typography>
+            <Chip
+              icon={manager.actif ? <CheckCircleIcon /> : <CancelIcon />}
+              label={manager.actif ? "Actif" : "Inactif"}
+              size="small"
+              color={manager.actif ? "success" : "error"}
+              sx={{ mt: 0.5 }}
+            />
+          </Box>
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+          <LocationCityIcon sx={{ mr: 1, color: "#667eea", fontSize: "1.2rem" }} />
+          <Typography>
+            <strong>Département :</strong> {manager.departement}
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <EmailIcon sx={{ mr: 1, color: "#667eea", fontSize: "1.2rem" }} />
+          <Link href={`mailto:${manager.email}`} underline="hover" sx={{ fontWeight: 500 }}>
             {manager.email}
           </Link>
-        </Typography>
-        <Typography>Statut : {manager.actif ? "Actif" : "Inactif"}</Typography>
+        </Box>
       </CardContent>
     </Card>
   );
