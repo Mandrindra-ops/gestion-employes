@@ -76,7 +76,6 @@ export const InternCreate = () => (
               actif: true,
               ...(formData?.departement ? { departement: formData.departement } : {}),
             }}
-            validate={required()}
           >
             <SelectInput optionText={(record: any) => `${record.firstname} ${record.lastname}`} />
           </ReferenceInput>
