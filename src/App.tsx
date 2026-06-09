@@ -1,6 +1,7 @@
 import { Admin, Resource } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
+import { Dashboard } from "./Dashboard";
 import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeEdit } from "./employees/EmployeeEdit";
 import { EmployeeShow } from "./employees/EmployeeShow";
@@ -11,7 +12,7 @@ import { InternShow } from "./interns/InternShow";
 import { InternCreate } from "./interns/InternCreate";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider}>
+  <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource
       name="employees"
       list={EmployeeList}
