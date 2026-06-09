@@ -87,7 +87,7 @@ export const InternEdit = () => (
               actif: true,
               ...(formData?.departement ? { departement: formData.departement } : {}),
             }}
-            validate={required("Le manager est obligatoire")}
+            validate={required()}
           >
             <SelectInput optionText={(record: any) => `${record.firstname} ${record.lastname}`} />
           </ReferenceInput>

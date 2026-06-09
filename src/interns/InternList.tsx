@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, ReferenceField, NumberField, EditButton, DeleteButton, TextInput, BooleanInput, DataTable, EmailField, BooleanField, FunctionField, SearchInput, SelectInput, TopToolbar } from 'react-admin';
+import { List, ReferenceField, NumberField, EditButton, DeleteButton, DataTable, EmailField, BooleanField, FunctionField, SearchInput, SelectInput, TopToolbar } from 'react-admin';
 import { QuickInternCreateButton } from './QuickInternCreateButton';
 
 const InternListActions = () => (
